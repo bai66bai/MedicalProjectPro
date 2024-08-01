@@ -10,7 +10,7 @@ public class TtorCtrScroll : MonoBehaviour
     //Ö´ÐÐÊ±¼ä
     public float smoothTime = 1.0f;
 
-    public List<GameObject> textMeshPros;
+ 
     //void Start()
     //{
         
@@ -36,10 +36,6 @@ public class TtorCtrScroll : MonoBehaviour
             yield return null;
         }
         scrollView.horizontalNormalizedPosition = 0.0f;
-        textMeshPros.ForEach(p =>
-        {
-            p.SetActive(true);
-        });
     }
 
 

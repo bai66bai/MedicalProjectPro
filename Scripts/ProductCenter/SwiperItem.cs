@@ -2,7 +2,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.ProductCenter
 {
@@ -19,7 +18,7 @@ namespace Assets.Scripts.ProductCenter
 
         public void LoadDetail()
         {
-            DetailStore.ActiveDetailText = textName.text.Replace("注射液", "");
+            //DetailStore.ActiveDetailText = textName.text.Replace("注射液", "");
 
             LevelLoader.LoadNewScene("DetailScene");
         }

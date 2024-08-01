@@ -19,7 +19,7 @@ namespace Assets.Scripts.ProductCenterProMax
 
         public void LoadDetail()
         {
-            DetailStore.ActiveDetailText = textName.text.Replace("注射液", "");
+            DetailStore.ActiveDetailText = textName.text;
             LevelLoader.LoadNewScene("DetailScene");
         }
 
