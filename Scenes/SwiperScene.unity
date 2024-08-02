@@ -15747,7 +15747,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "VEGF/\u8865\u4F53\u86CB\u767D"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3848883dd4afb5142beeadebe88599a1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e3fac5e0b2299a247b5a4b228fccbf3c, type: 2}
   m_sharedMaterial: {fileID: -3899003491901917412, guid: 3848883dd4afb5142beeadebe88599a1,
     type: 2}
   m_fontSharedMaterials: []
@@ -15812,7 +15812,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &721127568
@@ -27852,7 +27852,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "VEGF/\u8865\u4F53\u86CB\u767D"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3848883dd4afb5142beeadebe88599a1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e3fac5e0b2299a247b5a4b228fccbf3c, type: 2}
   m_sharedMaterial: {fileID: -3899003491901917412, guid: 3848883dd4afb5142beeadebe88599a1,
     type: 2}
   m_fontSharedMaterials: []
@@ -27917,7 +27917,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1203195745
