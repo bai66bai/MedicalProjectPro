@@ -1,6 +1,8 @@
 using BUT.TTOR.Core;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +24,8 @@ public class BreakTTORIdle : MonoBehaviour
     private bool IsNeedHandle = false;
 
     private Coroutine BackCorutine;
+
+    private HashSet<PuckData> puckSet = new();
 
     private void Start()
     {
@@ -58,9 +62,10 @@ public class BreakTTORIdle : MonoBehaviour
 
 
 
-    public void AnyPuckCreated(Puck _)
+    public void AnyPuckCreated(Puck addedPuck)
     {
-
+        if (puckSet.Contains(addedPuck.Data))
+            return;
         if (puckCount == 0)
         {
             if(BackCorutine != null)
@@ -78,20 +83,24 @@ public class BreakTTORIdle : MonoBehaviour
             }
 
         }
+        puckSet.Add(addedPuck.Data);
         puckCount++;
     }
 
-    public void AnyPuckRemoved(Puck _)
+    public void AnyPuckRemoved(Puck removedPuck)
     {
+        if(puckSet.Contains(removedPuck.Data))
+        {
+            puckSet.Remove(removedPuck.Data);
+
+            puckCount--;
+        }
         
-        puckCount--;
-        if(puckCount <1)
+        if (puckCount <1)
         {
             IsNeedHandle = true;
         }
     }
-
-
 
 
     IEnumerator FadeOut(Image imageToFade)
