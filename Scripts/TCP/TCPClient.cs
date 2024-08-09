@@ -7,7 +7,7 @@ using System.Collections;
 public class TCPClient : MonoBehaviour
 {
     // 配置服务器IP和端口
-    private static string serverIp = "192.168.5.219";
+    private static string serverIp = "192.168.3.18";
     public int serverPort = 8686;
 
     // 封装发送请求的方法
