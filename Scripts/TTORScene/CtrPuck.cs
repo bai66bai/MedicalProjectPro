@@ -10,15 +10,15 @@ public class CtrPuck : MonoBehaviour
     private float projectionDistance;
     public int CompareIndex;
 
-    private CtrBtnActive ctrBthActive;
+    // private CtrBtnActive ctrBthActive;
 
     // 要检测的UI元素的RectTransform
     public RectTransform targetRectTransform;
     private void Start()
     {
         GameObject trackerObj = GameObject.Find("TTOR_PuckTracker");
-        ctrBthActive = GetComponent<CtrBtnActive>();
-        
+        // ctrBthActive = GetComponent<CtrBtnActive>();
+
         TTOR_PuckTracker TTOR_PuckTracker = trackerObj.GetComponent<TTOR_PuckTracker>();
         projectionDistance = TTOR_PuckTracker.ProjectionDistance;
     }
@@ -44,12 +44,12 @@ public class CtrPuck : MonoBehaviour
                 }
             }
             IsNeedHandle = flag;
-            if(!IsNeedHandle) hasExecuted = false;
+            if (!IsNeedHandle) hasExecuted = false;
             //如果有触点  且触点不在范围内就隐藏显示
             if (!IsNeedHandle)
             {
                 PuckDisplay.SetActive(false);
-                
+
             }
         }
         else if (IsNeedHandle && Input.touchCount == 0)
@@ -100,9 +100,9 @@ public class CtrPuck : MonoBehaviour
         if (IsInArea(actionPositin))
         {
 
-            if(!hasExecuted)
+            if (!hasExecuted)
             {
-                ctrBthActive.StartMove();
+                //ctrBthActive.StartMove();
                 hasExecuted = true;
             }
             PuckDisplay.SetActive(true);
@@ -125,7 +125,7 @@ public class CtrPuck : MonoBehaviour
             float bottomDifference;
             if (bottomBounds < 180 && degree > 180 && Mathf.Abs(degree - 180) > 60)
                 bottomDifference = (bottomBounds + 360) - degree;
-            else if(degree < 180 && bottomBounds > 180 && Mathf.Abs(degree - 180) > 60)
+            else if (degree < 180 && bottomBounds > 180 && Mathf.Abs(degree - 180) > 60)
                 bottomDifference = bottomBounds - (degree + 360);
             else
                 bottomDifference = bottomBounds - degree;
@@ -149,10 +149,13 @@ public class CtrPuck : MonoBehaviour
     {
         //开始执行检测是否有触点
         IsNeedHandle = true;
-        
+
     }
 
-    private bool IsInArea(Vector3 puckPos) => (puckPos.x > -5 && puckPos.x < -2
-             && puckPos.y > -0.55 && puckPos.y < 3.27);
+    private bool IsInArea(Vector3 puckPos) {
+        Debug.Log(puckPos);
+      return  (puckPos.x > -6.5 && puckPos.x < -2
+             && puckPos.y > -1 && puckPos.y < 3.27);
+    }
 
 }
