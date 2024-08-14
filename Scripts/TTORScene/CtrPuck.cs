@@ -10,6 +10,10 @@ public class CtrPuck : MonoBehaviour
     private float projectionDistance;
     public int CompareIndex;
 
+    private TTOR_PuckTracker tracker;
+
+    public static string currentPuckName = string.Empty;
+
     // private CtrBtnActive ctrBthActive;
 
     // 要检测的UI元素的RectTransform
@@ -19,8 +23,8 @@ public class CtrPuck : MonoBehaviour
         GameObject trackerObj = GameObject.Find("TTOR_PuckTracker");
         // ctrBthActive = GetComponent<CtrBtnActive>();
 
-        TTOR_PuckTracker TTOR_PuckTracker = trackerObj.GetComponent<TTOR_PuckTracker>();
-        projectionDistance = TTOR_PuckTracker.ProjectionDistance;
+        tracker = trackerObj.GetComponent<TTOR_PuckTracker>();
+        projectionDistance = tracker.ProjectionDistance;
     }
 
 
@@ -93,6 +97,16 @@ public class CtrPuck : MonoBehaviour
     //检测冰壶移动时的效果
     public void PuckMove(Puck puck)
     {
+        if (currentPuckName != string.Empty)
+        {
+            if (currentPuckName != puck.Data.name) return;
+        }
+        else
+        {
+            currentPuckName = puck.Data.name;
+        }
+
+
         //获取冰壶放置初始位置
         var actionPositin = puck.GetPosition(projectionDistance);
         //Debug.Log(topBounds);
@@ -147,13 +161,15 @@ public class CtrPuck : MonoBehaviour
     //冰壶移除时触发的效果
     public void PackRemoved(Puck puck)
     {
-        //开始执行检测是否有触点
-        IsNeedHandle = true;
-
+        if(currentPuckName == puck.Data.name)
+        {
+            //开始执行检测是否有触点
+            IsNeedHandle = true;
+            currentPuckName = string.Empty;
+        }
     }
 
     private bool IsInArea(Vector3 puckPos) {
-        Debug.Log(puckPos);
       return  (puckPos.x > -6.5 && puckPos.x < -2
              && puckPos.y > -1 && puckPos.y < 3.27);
     }
