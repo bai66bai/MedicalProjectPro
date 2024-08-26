@@ -23,7 +23,7 @@ public class ScrollMenu : MonoBehaviour, IEndDragHandler, IBeginDragHandler
 
     private readonly List<float> itemCenterPosList = new()
     {
-        1f, 0.8887244f, 0.7783621f, 0.6677234f, 0.5567229f, 0.4449991f, 0.3349984f, 0.2249982f, 0.1126361f, 0.002f
+        1f, 0.89871f, 0.80064f, 0.70156f, 0.59845f, 0.50168f, 0.40257f, 0.30257f, 0.20096f, 0.10131f, 0.002f
     };
 
 
@@ -37,6 +37,11 @@ public class ScrollMenu : MonoBehaviour, IEndDragHandler, IBeginDragHandler
         client.SendMessage($"detail:{currentItem.Text}");
         currentItem.ActivateItem();
     }
+
+    //private void Update()
+    //{
+    //    Debug.Log(scrollRect?.normalizedPosition.y);
+    //}
 
     void Start()
     {
