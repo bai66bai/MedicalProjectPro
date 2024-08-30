@@ -17,7 +17,7 @@ public class AllTcpHandler : TCPMsgHandler
                 case "stop":
                 ScreenMark.SetActive(true);
                     break;
-                case "TBtnName":
+                case "start":
                 ScreenMark.SetActive(false);
                 break;
             }
