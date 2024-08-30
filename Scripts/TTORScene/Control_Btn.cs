@@ -7,7 +7,7 @@ public class Control_Btn : MonoBehaviour
 
     public List<GameObject> BtnList;
     public List<GameObject> ShowContent;
-
+    public TCPClient client;
     public List<GameObject> Texts;
 
     private int currentIndex;
@@ -27,7 +27,8 @@ public class Control_Btn : MonoBehaviour
         {      int index = BtnList.IndexOf(u);
             if(u.name == go.name)
             {
-              
+                TTORStore.BtnIndex = index;
+                client.SendMessage($"TBtnName:{u.name}-{TTORStore.ID}");
                 CurrentIndex = index;
                 foreach (var item in ShowContent)
                 {
@@ -57,6 +58,8 @@ public class Control_Btn : MonoBehaviour
            int Sindex = BtnList.IndexOf(u);
             if(index == Sindex)
             {
+                TTORStore.BtnIndex = index;
+                client.SendMessage($"TBtnName:{u.name}-{TTORStore.ID}");
                 foreach (var item in ShowContent)
                 {
                     int index = ShowContent.IndexOf(item);

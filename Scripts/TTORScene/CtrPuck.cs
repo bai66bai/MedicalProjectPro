@@ -11,7 +11,7 @@ public class CtrPuck : MonoBehaviour
     public int CompareIndex;
 
     private TTOR_PuckTracker tracker;
-
+    public ScreenCastBtn ScreenCastBtn;
     public static string currentPuckName = string.Empty;
 
     // private CtrBtnActive ctrBthActive;
@@ -53,11 +53,12 @@ public class CtrPuck : MonoBehaviour
             if (!IsNeedHandle)
             {
                 PuckDisplay.SetActive(false);
-
+             
             }
         }
         else if (IsNeedHandle && Input.touchCount == 0)
         {
+
             PuckDisplay.SetActive(false);
             //可以执行按钮操作
             hasExecuted = false;
