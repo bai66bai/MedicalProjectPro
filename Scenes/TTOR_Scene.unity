@@ -1633,6 +1633,7 @@ MonoBehaviour:
   - {fileID: 1929390727}
   - {fileID: 1118688637}
   - {fileID: 1015300341}
+  client: {fileID: 737361513}
 --- !u!1 &256560277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,6 +2910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 408222549}
   - component: {fileID: 408222550}
+  - component: {fileID: 408222551}
   m_Layer: 5
   m_Name: ScreenCasting
   m_TagString: Untagged
@@ -2949,7 +2951,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 408222551}
+          m_TargetAssemblyTypeName: ScreenCastBtn, Assembly-CSharp
+          m_MethodName: ChangeScreenCast
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Picankibart
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &408222551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408222548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9de30c2308f02479add6511da41dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowImage: {fileID: 1164438701}
+  HeadImage: {fileID: 1524937461}
+  client: {fileID: 737361513}
+  btn: {fileID: 548999125}
+  ContentList:
+  - {fileID: 1994804139}
+  - {fileID: 1309773754}
+  - {fileID: 546736100}
 --- !u!1 &429039963
 GameObject:
   m_ObjectHideFlags: 0
@@ -4786,7 +4824,7 @@ MonoBehaviour:
   - {fileID: 1994804139}
   - {fileID: 1309773754}
   - {fileID: 546736100}
-  client: {fileID: 0}
+  client: {fileID: 737361513}
   Texts:
   - {fileID: 1530510488}
   - {fileID: 1610869454}
@@ -6511,7 +6549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &662168829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14393,6 +14431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1473023201}
   - component: {fileID: 1473023202}
+  - component: {fileID: 1473023203}
   m_Layer: 5
   m_Name: ScreenCasting
   m_TagString: Untagged
@@ -14433,7 +14472,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1473023203}
+          m_TargetAssemblyTypeName: ScreenCastBtn, Assembly-CSharp
+          m_MethodName: ChangeScreenCast
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Teprotumumab
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1473023203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473023200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9de30c2308f02479add6511da41dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowImage: {fileID: 758398811}
+  HeadImage: {fileID: 1387822297}
+  client: {fileID: 737361513}
+  btn: {fileID: 2132011464}
+  ContentList:
+  - {fileID: 603254160}
+  - {fileID: 1371791807}
+  - {fileID: 1902434354}
 --- !u!1 &1482097391
 GameObject:
   m_ObjectHideFlags: 0
@@ -15475,6 +15550,7 @@ MonoBehaviour:
   - {fileID: 1472732896}
   - {fileID: 1248336455}
   - {fileID: 2035521025}
+  client: {fileID: 737361513}
 --- !u!222 &1540180803
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22190,7 +22266,7 @@ MonoBehaviour:
   - {fileID: 603254160}
   - {fileID: 1371791807}
   - {fileID: 1902434354}
-  client: {fileID: 0}
+  client: {fileID: 737361513}
   Texts:
   - {fileID: 444139657}
   - {fileID: 306631775}
