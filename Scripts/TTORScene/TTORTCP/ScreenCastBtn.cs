@@ -10,6 +10,11 @@ public class ScreenCastBtn : MonoBehaviour
     public TCPClient client;
     public Control_Btn btn;
     public List<GameObject> ContentList;  
+    public bool IsOnScreen
+    {
+        get => !IsScreenCasting;
+    }
+
     private bool IsScreenCasting = true;
 
     private void OnEnable()
