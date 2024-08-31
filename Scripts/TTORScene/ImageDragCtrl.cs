@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 public class ImageDragCtrl : MonoBehaviour
 {
     public GameObject ImageToDrag;
+    public TCPClient tcpClient;
 
     private float enableClickTime = 0;
     private float bounds = 0.5f;
@@ -26,6 +27,8 @@ public class ImageDragCtrl : MonoBehaviour
         if (Time.time < enableClickTime + bounds) return;
         Vector3 targetScale = ImageToDrag.transform.localScale == new Vector3(1, 1, 1) ? new Vector3(2f, 2f, 2f) : new Vector3(1, 1, 1);
         Vector3 targetPosition = ImageToDrag.transform.localScale == new Vector3(1, 1, 1)? ImageToDrag.transform.localPosition : startPosition;
+        string command = ImageToDrag.transform.localScale == new Vector3(1, 1, 1) ? "big" : "small";
+        tcpClient.SendMessage($"changeSize:{command}-{TTORStore.ID}" );
         StartCoroutine(ChangeScale(targetScale, targetPosition, 0.3f));
     }
 
